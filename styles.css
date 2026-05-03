@@ -1,0 +1,404 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: #0b1120;
+
+    position: fixed;   /* change this */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo {
+    color: #00d4ff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00d4ff;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin: 10px 0;
+    color: #00d4ff;
+}
+
+.hero p {
+    margin: 20px 0;
+}
+
+/* Buttons */
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    background: #00d4ff;
+    color: #000;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00aacc;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid #00d4ff;
+    color: #00d4ff;
+}
+
+.btn.secondary:hover {
+    background: #00d4ff;
+    color: #000;
+}
+
+.hero-image img {
+    width: 350px;
+    border-radius: 50%;
+}
+
+/* Sections Base */
+section {
+    padding: 80px 10%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+section h2 {
+    color: #00d4ff;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #00d4ff;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Different Section Colors */
+.about {
+    background: #0f2027;
+}
+
+.skills {
+    background: #111827;
+}
+
+.education {
+    background: #0a0a0a;
+}
+
+.projects {
+    background: #1a1a2e;
+}
+
+.contact {
+    background: #111827;
+}
+
+/* Skills Section */
+.skills {
+    background: linear-gradient(135deg, #0f2027, #1a1a2e);
+}
+
+/* Grid */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+}
+
+/* Skill Card - Glassmorphism */
+.skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow Effect Layer */
+.skill-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(0,212,255,0.3), transparent);
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+/* Hover Effects */
+.skill-card:hover::before {
+    opacity: 1;
+    top: -20%;
+    left: -20%;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    color: #00d4ff;
+    border-color: #00d4ff;
+    box-shadow: 0 15px 35px rgba(0, 212, 255, 0.25);
+}
+
+/* Optional Icon Styling */
+.skill-card span {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Education */
+.education-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.edu-card {
+    background: #1c1c1c;
+    padding: 20px;
+    width: 250px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.edu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.2);
+}
+
+.edu-card h3 {
+    color: #00d4ff;
+}
+
+/* Projects */
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background: #1c1c1c;
+    padding: 20px;
+    width: 260px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.2);
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+/* Contact */
+.contact a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    padding: 15px;
+    text-align: center;
+}
+
+footer a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        width: 200px;
+        margin-top: 20px;
+    }
+}
+
+/* ===== FINAL COLOR FIX (SAFE) ===== */
+
+/* Main background */
+body {
+    background: #0b1120;
+    color: #fff;
+}
+
+/* Keep same layout but unify color */
+.about,
+.skills,
+.education,
+.projects,
+.contact,
+.hero,
+.navbar {
+    background: #0b1120 !important;
+}
+
+/* Cards stay slightly different */
+.skill-card,
+.edu-card,
+.project-card {
+    background: #111827 !important;
+    border: 1px solid #1f2937;
+}
+
+/* Headings */
+section h2 {
+    color: #00d4ff;
+}
+
+/* Links */
+a {
+    color: #00d4ff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: #0b1120;
+
+    /* REMOVE THESE */
+    /* position: sticky; */
+    /* top: 0; */
+    /* z-index: 100; */
+}
